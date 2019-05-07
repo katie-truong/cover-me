@@ -6,6 +6,7 @@ class Form extends React.Component {
       super();
       this.state = {
 				yourName: '',
+				student: false,
 				contactName: '',
         companyName: '',
         companyCategory: [
@@ -34,12 +35,19 @@ class Form extends React.Component {
         phoneNumber: '',
         websiteLink: ''
     	};
-      this.handleChange = this.handleChange.bind(this);
+			this.handleChange = this.handleChange.bind(this);
+			this.handleChangeRadioButton = this.handleChangeRadioButton.bind(this);
     }
     
     handleChange (evt) {
       this.setState({ [evt.target.name]: evt.target.value });
-    }
+		}
+		
+		handleChangeRadioButton (event) {
+			this.setState({
+				student: event.target.value
+			});
+		}
     
     render () {
       return (
@@ -49,6 +57,28 @@ class Form extends React.Component {
         			<label>Your Name: </label>
 							<input type="text" name="name" onChange={this.handleChange} />
 						</div>
+
+						<p>Are you a student?</p>
+      
+          <label>
+            <input
+							type="radio"
+              value="true"
+              checked={this.state.student === true}
+              onChange={this.handleChangeRadioButton}
+            />
+            Yes
+          </label>
+        
+          <label>
+            <input
+							type="radio"
+              value="false"
+              checked={this.state.student === false}
+              onChange={this.handleChangeRadioButton}
+            />
+            No
+          </label>
 
 						<div>
 							<label>Contact Name: </label>
