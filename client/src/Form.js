@@ -47,6 +47,27 @@ class Form extends React.Component {
 		}	
     
     render () {
+			let studentRender = null;
+			if (this.state.student === 'true') {
+				studentRender = 	<div>				
+				<div>
+					<label>School: </label>
+					<input type="text" name="school" onChange={this.handleChange} />
+				</div>
+
+				<div>
+					<label>Year in School: </label>
+					<select
+						name="year" 			
+						value={this.state.year[0]}
+						onChange={this.handleChange}>
+							{this.state.year.map(option => (
+								<option value={option.value}>{option.displayValue}</option>
+							))}
+						</select>
+				</div>
+			</div>	
+			}
       return (
 				<div>
         	<form onSubmit={this.handleSubmit}>
@@ -78,6 +99,22 @@ class Form extends React.Component {
             		No
           		</label>
 						</div>
+						{studentRender}
+						{/* <div>
+							<label>School: </label>
+							<input type="text" name="school" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>Year in School: </label>
+							<select 
+                            value={this.state.year[0]}
+                            onChange={this.handleChange}>
+                            {this.state.year.map(option => (
+                                <option value={option.value}>{option.displayValue}</option>
+                            ))}
+                        </select>
+						</div> */}
 
 						<div>
 							<label>Contact Name: </label>
@@ -96,22 +133,6 @@ class Form extends React.Component {
                 	<option key={option.id} value={option.value}>{option.displayValue}</option>
               	))}
 							</select>
-						</div>
-
-						<div>
-							<label>School: </label>
-							<input type="text" name="school" onChange={this.handleChange} />
-						</div>
-
-						<div>
-							<label>Year in School: </label>
-							<select 
-                            value={this.state.year[0]}
-                            onChange={this.handleChange}>
-                            {this.state.year.map(option => (
-                                <option value={option.value}>{option.displayValue}</option>
-                            ))}
-                        </select>
 						</div>
 
 						<div>
