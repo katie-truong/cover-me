@@ -8,6 +8,7 @@ class Form extends React.Component {
 				yourName: '',
 				student: '',
 				contactName: '',
+				howWeMet: '',
         companyName: '',
         companyCategory: [
             {value: '', displayValue: ''},
@@ -18,28 +19,25 @@ class Form extends React.Component {
             {value: 'service', displayValue: 'Service'},
             {value: 'ecommerce', displayValue: 'E-Commerce'},
             {value: 'non-tech', displayValue: 'Non Tech'}
-        ],
-        school: '',
-        year: [
-            {value: '', displayValue: ''},
-            {value: 4, displayValue: 'Senior'},
-            {value: 3, displayValue: 'Junior'},
-            {value: 2, displayValue: 'Sophomore'},
-            {value: 1, displayValue: 'Freshman'},
-            {value: 'NaN', displayValue: 'Not Applicable'}
-        ],
+				],
+				companyMission: '',
+				school: '',
+				major: '',
         languages: '',
         skills: '',
         workingExperience: '',
         projectExperience: '',
         phoneNumber: '',
-        websiteLink: ''
+				websiteLink: '',
+				submit: ''
     	};
 			this.handleChange = this.handleChange.bind(this);
+			this.handleSubmit = this.handleSubmit.bind(this);
     }
     
     handleChange (event) {
-      this.setState({ [event.target.name]: event.target.value });
+			this.props.onUpdate(event.target.value);
+			this.setState({ [event.target.name]: event.target.value });
 		}
 		
 		handleSubmit(event) {
@@ -56,15 +54,8 @@ class Form extends React.Component {
 				</div>
 
 				<div>
-					<label>Year in School: </label>
-					<select
-						name="year" 			
-						value={this.state.year[0]}
-						onChange={this.handleChange}>
-							{this.state.year.map(option => (
-								<option value={option.value}>{option.displayValue}</option>
-							))}
-						</select>
+					<label>Major: </label>
+					<input type="text" name="major" onChange={this.handleChange} />
 				</div>
 			</div>	
 			}
@@ -73,7 +64,11 @@ class Form extends React.Component {
         	<form onSubmit={this.handleSubmit}>
 						<div>
         			<label>Your Name: </label>
-							<input type="text" name="name" onChange={this.handleChange} />
+							<input 
+								type="text" 
+								name="name" 
+								onChange={this.handleChange} 
+								value={this.state.name}/>
 						</div>
 
 						<div>
@@ -99,26 +94,17 @@ class Form extends React.Component {
             		No
           		</label>
 						</div>
-						{studentRender}
-						{/* <div>
-							<label>School: </label>
-							<input type="text" name="school" onChange={this.handleChange} />
-						</div>
 
-						<div>
-							<label>Year in School: </label>
-							<select 
-                            value={this.state.year[0]}
-                            onChange={this.handleChange}>
-                            {this.state.year.map(option => (
-                                <option value={option.value}>{option.displayValue}</option>
-                            ))}
-                        </select>
-						</div> */}
+						{studentRender}
 
 						<div>
 							<label>Contact Name: </label>
 							<input type="text" name="name" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>How We Met: </label>
+							<input type="text" name="howWeMet" onChange={this.handleChange}></input>
 						</div>
 
 						<div>
@@ -133,6 +119,11 @@ class Form extends React.Component {
                 	<option key={option.id} value={option.value}>{option.displayValue}</option>
               	))}
 							</select>
+						</div>
+
+						<div>
+							<label>Company Mission: </label>
+							<input type="text" name="companyMission" onChange={this.handleChange} />
 						</div>
 
 						<div>
@@ -164,6 +155,7 @@ class Form extends React.Component {
 							<label>Website: </label>
 							<input type="text" name="websiteLink" onChange={this.handleChange} />
 						</div>
+						<input type="submit" value="Submit" />
 					</form>
 				</div>
       );
