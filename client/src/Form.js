@@ -151,24 +151,49 @@ class Form extends React.Component {
 				<div>
         	<form>
 						<div>
-        			<label>Name</label>
+        			<label>Name: </label>
 							<input type="text" name="name" onChange={this.handleChange} />
 						</div>
 
 						<div>
-							<label>Company Name</label>
+							<label>Company Name: </label>
 							<input type="text" name="companyName" onChange={this.handleChange} />
 						</div>
 
 						<div>
-              <label>Company Category: </label>
-							<select 
-									name="companyCategory"
-                  value={this.state.companyCategory[0]}
-                  onChange={this.handleChange}>
-									{console.log(typeof(this.state.companyCategory))}
-            	</select>
-            </div>
+							<label>School: </label>
+							<input type="text" name="school" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>Languages: </label>
+							<input type="text" name="languages" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>Skills: </label>
+							<input type="text" name="skills" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>Working Experience: </label>
+							<input type="text" name="workingExperience" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>Project Experience: </label>
+							<input type="text" name="projectExperience" onChange={this.handleChange} />
+						</div>
+
+						<div>
+							<label>Phone Number: </label>
+							<input type="text" name="phoneNumber" onChange={this.handleChange} />
+						</div>
+						
+						<div>
+							<label>Website: </label>
+							<input type="text" name="websiteLink" onChange={this.handleChange} />
+						</div>
 					</form>
 				</div>
       );
