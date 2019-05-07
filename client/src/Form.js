@@ -6,7 +6,7 @@ class Form extends React.Component {
       super();
       this.state = {
 				yourName: '',
-				student: false,
+				student: '',
 				contactName: '',
         companyName: '',
         companyCategory: [
@@ -36,49 +36,48 @@ class Form extends React.Component {
         websiteLink: ''
     	};
 			this.handleChange = this.handleChange.bind(this);
-			this.handleChangeRadioButton = this.handleChangeRadioButton.bind(this);
     }
     
-    handleChange (evt) {
-      this.setState({ [evt.target.name]: evt.target.value });
+    handleChange (event) {
+      this.setState({ [event.target.name]: event.target.value });
 		}
 		
-		handleChangeRadioButton (event) {
-			this.setState({
-				student: event.target.value
-			});
-		}
+		handleSubmit(event) {
+			event.preventDefault();
+		}	
     
     render () {
       return (
 				<div>
-        	<form>
+        	<form onSubmit={this.handleSubmit}>
 						<div>
         			<label>Your Name: </label>
 							<input type="text" name="name" onChange={this.handleChange} />
 						</div>
 
-						<p>Are you a student?</p>
-      
-          <label>
-            <input
-							type="radio"
-              value="true"
-              checked={this.state.student === true}
-              onChange={this.handleChangeRadioButton}
-            />
-            Yes
-          </label>
-        
-          <label>
-            <input
-							type="radio"
-              value="false"
-              checked={this.state.student === false}
-              onChange={this.handleChangeRadioButton}
-            />
-            No
-          </label>
+						<div>
+							<label>Are you a student? </label>
+							<label>
+            		<input
+									name="student"
+									type="radio"
+              		value="true"
+              		checked={this.state.student === "true"}
+              		onChange={this.handleChange}
+            		/>
+            		Yes
+          		</label>
+							<label>
+            		<input
+									name="student"
+									type="radio"
+              		value="false"
+              		checked={this.state.student === "false"}
+              		onChange={this.handleChange}
+            		/>
+            		No
+          		</label>
+						</div>
 
 						<div>
 							<label>Contact Name: </label>
