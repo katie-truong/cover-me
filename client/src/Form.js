@@ -6,7 +6,7 @@ class Form extends React.Component {
       super();
       this.state = {
 				yourName: '',
-				student: '',
+				student: 'true',
 				contactName: '',
 				howWeMet: '',
         companyName: '',
@@ -20,11 +20,15 @@ class Form extends React.Component {
             {value: 'ecommerce', displayValue: 'E-Commerce'},
             {value: 'non-tech', displayValue: 'Non Tech'}
 				],
-				companyMission: '',
+				position: '',
+				companyMission: ``,
 				school: '',
 				major: '',
+				minor: '',
+				title: '',
         languages: '',
-        skills: '',
+				skills: '',
+				primaryFocus: '',
         workingExperience: '',
         projectExperience: '',
         phoneNumber: '',
@@ -53,12 +57,17 @@ class Form extends React.Component {
 					student: this.state.student,
 					school: this.state.school,
 					major: this.state.major,
+					minor: this.state.minor,
+					title: this.state.title,
 					contactName: this.state.contactName,
 					howWeMet: this.state.howWeMet,
 					companyName: this.state.companyName,
 					companyCategory: this.state.companyCategory,
+					companyMission: this.state.companyMission,
+					position: this.state.position,
 					languages: this.state.languages,
 					skills: this.state.skills,
+					primaryFocus: this.state.primaryFocus,
 					workingExperience: this.state.workingExperience,
 					projectExperience: this.state.projectExperience,
 					phoneNumber: this.state.phoneNumber,
@@ -75,14 +84,38 @@ class Form extends React.Component {
 				studentRender = 	<div>				
 				<div>
 					<label>School: </label>
-					<input type="text" name="school" onChange={this.handleChange} />
+					<input 
+						type="text" 
+						name="school" 
+						// defaultValue="University of Maryland"
+						onChange={this.handleChange} />
 				</div>
 
 				<div>
 					<label>Major: </label>
-					<input type="text" name="major" onChange={this.handleChange} />
+					<input 
+						type="text" 
+						name="major"
+						// defaultValue="Computer Science" 
+						onChange={this.handleChange} />
+				</div>
+
+				<div>
+					<label>Minor: </label>
+					<input 
+						type="text" 
+						name="minor"
+						// defaultValue="Math" 
+						onChange={this.handleChange} />
 				</div>
 			</div>	
+			} else if (this.state.student === 'false') {
+				studentRender = <div>
+					<div>
+						<label>Job Title: </label>
+						<input type="text" name="title" onChange={this.handleChange} />
+					</div>
+				</div>
 			}
       return (
 				<div>
@@ -92,7 +125,8 @@ class Form extends React.Component {
 							<input 
 								type="text" 
 								name="yourName" 
-								onChange={this.handleChange} 
+								onChange={this.handleChange}
+								// defaultValue="Kevin" 
 								value={this.state.name}/>
 						</div>
 
@@ -124,31 +158,59 @@ class Form extends React.Component {
 
 						<div>
 							<label>Contact Name: </label>
-							<input type="text" name="contactName" onChange={this.handleChange} />
+							<input 
+								type="text" 
+								name="contactName" 
+								onChange={this.handleChange}
+								// defaultValue="Nathan" 
+								value={this.state.contactName}/>
 						</div>
 
-						<div>
+						{/* <div>
 							<label>How We Met: </label>
 							<input type="text" name="howWeMet" onChange={this.handleChange}></input>
-						</div>
+						</div> */}
 
 						<div>
 							<label>Company Name: </label>
-							<input type="text" name="companyName" onChange={this.handleChange} />
+							<input 
+								type="text" 
+								name="companyName" 
+								onChange={this.handleChange} 
+								value={this.props.companyName}
+								// defaultValue="Google"
+							/>
 						</div>
 
-						<div>
+						{/* <div>
 							<label>Company Type: </label>
 							<select value={this.state.value} onChange={this.handleChange}>
 								{this.state.companyCategory.map((option, index) => (
                 	<option key={index} value={option.value}>{option.displayValue}</option>
 								))}
 							</select>
+						</div> */}
+
+						<div>
+							<label>Position: </label>
+							<input 
+								type="text" 
+								name="position" 
+								onChange={this.handleChange} 
+								value={this.props.position}
+								// defaultValue="Software Engineer"
+							/>
 						</div>
 
 						<div>
 							<label>Company Mission: </label>
-							<input type="text" name="companyMission" onChange={this.handleChange} />
+							<input 
+								type="text" 
+								name="companyMission" 
+								onChange={this.handleChange} 
+								value={this.props.companyMission}
+								// defaultValue="to organize the world's information and make it universally accessible and useful"
+							/>
 						</div>
 
 						<div>
@@ -162,6 +224,11 @@ class Form extends React.Component {
 						</div>
 
 						<div>
+							<label>Primary Focus: </label>
+							<input type="text" name="primaryFocus" onChange={this.handleChange} />
+						</div>
+
+						<div>
 							<label>Working Experience: </label>
 							<input type="text" name="workingExperience" onChange={this.handleChange} />
 						</div>
@@ -171,15 +238,15 @@ class Form extends React.Component {
 							<input type="text" name="projectExperience" onChange={this.handleChange} />
 						</div>
 
-						<div>
+						{/* <div>
 							<label>Phone Number: </label>
 							<input type="text" name="phoneNumber" onChange={this.handleChange} />
-						</div>
+						</div> */}
 						
-						<div>
+						{/* <div>
 							<label>Website: </label>
 							<input type="text" name="websiteLink" onChange={this.handleChange} />
-						</div>
+						</div> */}
 						<input type="submit" value="Submit" />
 					</form>
 				</div>

@@ -18,8 +18,6 @@ class App extends React.Component {
     this.setState({
       submit: formData.submit,
       data: formData
-    }, () => {
-      console.log(this.state.data)
     })
   }
 
