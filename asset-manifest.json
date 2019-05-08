@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coverme/static/css/main.e23fee82.chunk.css",
+    "main.js": "/coverme/static/js/main.43ac2ccb.chunk.js",
+    "main.js.map": "/coverme/static/js/main.43ac2ccb.chunk.js.map",
+    "runtime~main.js": "/coverme/static/js/runtime~main.6ded5885.js",
+    "runtime~main.js.map": "/coverme/static/js/runtime~main.6ded5885.js.map",
+    "static/js/2.53622f50.chunk.js": "/coverme/static/js/2.53622f50.chunk.js",
+    "static/js/2.53622f50.chunk.js.map": "/coverme/static/js/2.53622f50.chunk.js.map",
+    "index.html": "/coverme/index.html",
+    "precache-manifest.f8819dbca5afa4ecd943d8107b7bdb99.js": "/coverme/precache-manifest.f8819dbca5afa4ecd943d8107b7bdb99.js",
+    "service-worker.js": "/coverme/service-worker.js",
+    "static/css/main.e23fee82.chunk.css.map": "/coverme/static/css/main.e23fee82.chunk.css.map"
+  }
+}
