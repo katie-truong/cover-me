@@ -17,7 +17,7 @@ class Message extends React.Component {
             if (this.props.data.minor === "") {
                 minorRender = ""
             } else {
-                minorRender = <span>with a minor in {this.props.data.minor}</span>
+                minorRender = `and ${this.props.data.minor} minor`
             }
 
             if (this.props.data.student === "true") {
@@ -38,8 +38,13 @@ class Message extends React.Component {
                 <br></br>
                 As a {introduceTitle}, I have {this.props.data.languages} and {this.props.data.skills} in my toolbox. 
                 My primary focus is {this.props.data.primaryFocus}, which is stemmed from my background and working experiences.
-                In the past, I {this.props.data.workingExperience} and {this.props.data.projectExperience}.
-
+                In the past, I {this.props.data.workingExperience} and {this.props.data.projectExperience}.<br></br>
+                <br></br>
+                I know my technical skills combined with my enthusiasm make me a great candidate for this role. 
+                When are you available for a chat to discuss further?<br></br>
+                <br></br>
+                All the best,<br></br>
+                {this.props.data.yourName}
             </div>
         }
         return(
