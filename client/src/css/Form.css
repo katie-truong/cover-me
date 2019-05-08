@@ -1,10 +1,15 @@
 .mainForm {
+    max-width: 36vw;
+    margin-right: 15vw;
+}
 
+div.section {
+    width: 35vw;
 }
 
 .textField {
     height: 36px;
-    /* width: auto; */
+    width: 25vw; 
     font-family: 'Open Sans', serif;
     font-size: 20px;
-}
+  }

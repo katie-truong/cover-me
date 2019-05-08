@@ -6,11 +6,11 @@ class Form extends React.Component {
     constructor () {
       super();
       this.state = {
-				yourName: '',
-				student: '',
-				contactName: '',
+				yourName: 'Kevin',
+				student: 'true',
+				contactName: 'Nathan',
 				howWeMet: '',
-        companyName: '',
+        companyName: 'Google',
         companyCategory: [
             {value: '', displayValue: ''},
             {value: 'bigN', displayValue: 'Big N'},
@@ -21,24 +21,30 @@ class Form extends React.Component {
             {value: 'ecommerce', displayValue: 'E-Commerce'},
             {value: 'non-tech', displayValue: 'Non Tech'}
 				],
-				position: '',
-				companyMission: ``,
-				school: '',
-				major: '',
-				minor: '',
+				position: 'Software Engineer New Grad',
+				companyMission: `to organize the world's information and make it universally accessible and useful`,
+				school: 'University of Maryland',
+				major: 'Computer Science',
+				minor: 'Math',
 				title: '',
-        languages: '',
-				skills: '',
-				primaryFocus: '',
-        workingExperience: '',
-        projectExperience: '',
+        languages: 'Java, Scala, Python',
+				skills: 'machine learning and predictive modeling',
+				primaryFocus: 'build the best recommendation system for the end users',
+        workingExperience: 'interned at Amazon',
+        projectExperience: 'made a strategic online card game that had 10,000+ downloads',
         phoneNumber: '',
 				websiteLink: '',
-				submit: ''
+				submit: 'True'
     	};
 			this.handleChange = this.handleChange.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
-    }
+		}
+		
+		componentDidMount() {
+			this.setState({
+				submit: 'True'
+			})
+		}
     
     handleChange (event) {
 			// this.props.onUpdate(event.target.value);
@@ -83,13 +89,13 @@ class Form extends React.Component {
 			let studentRender = null;
 			if (this.state.student === 'true') {
 				studentRender = 	<div>				
-				<div>
+				<div className="section">
 					<label>School: </label>
 					<input 
 						className="textField"
 						type="text" 
 						name="school" 
-						// defaultValue="University of Maryland"
+						defaultValue="University of Maryland"
 						onChange={this.handleChange} />
 				</div>
 
@@ -99,7 +105,7 @@ class Form extends React.Component {
 						className="textField"
 						type="text" 
 						name="major"
-						// defaultValue="Computer Science" 
+						defaultValue="Computer Science" 
 						onChange={this.handleChange} />
 				</div>
 
@@ -109,7 +115,7 @@ class Form extends React.Component {
 						className="textField"
 						type="text" 
 						name="minor"
-						// defaultValue="Math" 
+						defaultValue="Math" 
 						onChange={this.handleChange} />
 				</div>
 			</div>	
@@ -135,7 +141,7 @@ class Form extends React.Component {
 								type="text" 
 								name="yourName" 
 								onChange={this.handleChange}
-								// defaultValue="Kevin" 
+								defaultValue="Kevin" 
 								value={this.state.name}/>
 						</div>
 
@@ -174,7 +180,7 @@ class Form extends React.Component {
 								type="text" 
 								name="contactName" 
 								onChange={this.handleChange}
-								// defaultValue="Nathan" 
+								defaultValue="Nathan" 
 								value={this.state.contactName}/>
 						</div>
 
@@ -191,7 +197,7 @@ class Form extends React.Component {
 								name="companyName" 
 								onChange={this.handleChange} 
 								value={this.props.companyName}
-								// defaultValue="Google"
+								defaultValue="Google"
 							/>
 						</div>
 
@@ -212,7 +218,7 @@ class Form extends React.Component {
 								name="position" 
 								onChange={this.handleChange} 
 								value={this.props.position}
-								// defaultValue="Software Engineer"
+								defaultValue="Software Engineer New Grad"
 							/>
 						</div>
 
@@ -224,7 +230,7 @@ class Form extends React.Component {
 								name="companyMission" 
 								onChange={this.handleChange} 
 								value={this.props.companyMission}
-								// defaultValue="to organize the world's information and make it universally accessible and useful"
+								defaultValue="to organize the world's information and make it universally accessible and useful"
 							/>
 						</div>
 
@@ -234,7 +240,8 @@ class Form extends React.Component {
 								className="textField"
 								type="text" 
 								name="languages" 
-								onChange={this.handleChange} />
+								onChange={this.handleChange} 
+								defaultValue="Java, Scala and Python" />
 						</div>
 
 						<div className="section">
@@ -243,7 +250,8 @@ class Form extends React.Component {
 								className="textField"
 								type="text" 
 								name="skills" 
-								onChange={this.handleChange} />
+								onChange={this.handleChange} 
+								defaultValue="machine learning and predictive modeling"/>
 						</div>
 
 						<div className="section">
@@ -252,6 +260,7 @@ class Form extends React.Component {
 								className="textField" 
 								type="text" 
 								name="primaryFocus" 
+								defaultValue="build the best recommendation system for the end users"
 								onChange={this.handleChange} />
 						</div>
 
@@ -261,6 +270,7 @@ class Form extends React.Component {
 								className="textField"
 								type="text" 
 								name="workingExperience"
+								defaultValue="interned at Amazon"
 								onChange={this.handleChange} />
 						</div>
 
@@ -270,6 +280,7 @@ class Form extends React.Component {
 								className="textField"
 								type="text" 
 								name="projectExperience" 
+								defaultValue="made a strategic online card game that had over 10,000 downloads"
 								onChange={this.handleChange} />
 						</div>
 

@@ -7,7 +7,37 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: '',
+      data: {
+				yourName: 'Kevin',
+				student: 'true',
+				contactName: 'Nathan',
+				howWeMet: '',
+        companyName: 'Google',
+        companyCategory: [
+            {value: '', displayValue: ''},
+            {value: 'bigN', displayValue: 'Big N'},
+            {value: 'finTech', displayValue: 'FinTech'},
+            {value: 'healthcare', displayValue: 'Health Care'},
+            {value: 'edu', displayValue: 'Education'},
+            {value: 'service', displayValue: 'Service'},
+            {value: 'ecommerce', displayValue: 'E-Commerce'},
+            {value: 'non-tech', displayValue: 'Non Tech'}
+				],
+				position: 'Software Engineer New Grad',
+				companyMission: `to organize the world's information and make it universally accessible and useful`,
+				school: 'University of Maryland',
+				major: 'Computer Science',
+				minor: 'Math',
+				title: '',
+        languages: 'Java, Scala, Python',
+				skills: 'machine learning and predictive modeling',
+				primaryFocus: 'build the best recommendation system for the end users',
+        workingExperience: 'interned at Amazon',
+        projectExperience: 'made a strategic online card game that had 10,000+ downloads',
+        phoneNumber: '',
+				websiteLink: '',
+				submit: 'True'
+    	},
       submit: ''
     };
     this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
