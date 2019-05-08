@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/Form.css';
 
 class Form extends React.Component {
 
@@ -6,7 +7,7 @@ class Form extends React.Component {
       super();
       this.state = {
 				yourName: '',
-				student: 'true',
+				student: '',
 				contactName: '',
 				howWeMet: '',
         companyName: '',
@@ -85,24 +86,27 @@ class Form extends React.Component {
 				<div>
 					<label>School: </label>
 					<input 
+						className="textField"
 						type="text" 
 						name="school" 
 						// defaultValue="University of Maryland"
 						onChange={this.handleChange} />
 				</div>
 
-				<div>
+				<div className="section">
 					<label>Major: </label>
-					<input 
+					<input
+						className="textField"
 						type="text" 
 						name="major"
 						// defaultValue="Computer Science" 
 						onChange={this.handleChange} />
 				</div>
 
-				<div>
+				<div className="section">
 					<label>Minor: </label>
 					<input 
+						className="textField"
 						type="text" 
 						name="minor"
 						// defaultValue="Math" 
@@ -111,18 +115,23 @@ class Form extends React.Component {
 			</div>	
 			} else if (this.state.student === 'false') {
 				studentRender = <div>
-					<div>
+					<div className="section">
 						<label>Job Title: </label>
-						<input type="text" name="title" onChange={this.handleChange} />
+						<input 
+							className="textField"
+							type="text" 
+							name="title" 
+							onChange={this.handleChange} />
 					</div>
 				</div>
 			}
       return (
-				<div>
+				<div className="mainForm">
         	<form onSubmit={this.handleSubmit}>
-						<div>
+						<div className="section">
         			<label>Your Name: </label>
 							<input 
+								className="textField"
 								type="text" 
 								name="yourName" 
 								onChange={this.handleChange}
@@ -130,10 +139,11 @@ class Form extends React.Component {
 								value={this.state.name}/>
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Are you a student? </label>
 							<label>
             		<input
+									className="student"
 									name="student"
 									type="radio"
               		value="true"
@@ -144,6 +154,7 @@ class Form extends React.Component {
           		</label>
 							<label>
             		<input
+									className="student"
 									name="student"
 									type="radio"
               		value="false"
@@ -156,9 +167,10 @@ class Form extends React.Component {
 
 						{studentRender}
 
-						<div>
+						<div className="section">
 							<label>Contact Name: </label>
 							<input 
+								className="textField"
 								type="text" 
 								name="contactName" 
 								onChange={this.handleChange}
@@ -171,9 +183,10 @@ class Form extends React.Component {
 							<input type="text" name="howWeMet" onChange={this.handleChange}></input>
 						</div> */}
 
-						<div>
+						<div className="section">
 							<label>Company Name: </label>
 							<input 
+								className="textField"
 								type="text" 
 								name="companyName" 
 								onChange={this.handleChange} 
@@ -191,9 +204,10 @@ class Form extends React.Component {
 							</select>
 						</div> */}
 
-						<div>
+						<div className="section">
 							<label>Position: </label>
 							<input 
+								className="textField"
 								type="text" 
 								name="position" 
 								onChange={this.handleChange} 
@@ -202,9 +216,10 @@ class Form extends React.Component {
 							/>
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Company Mission: </label>
 							<input 
+								className="textField"
 								type="text" 
 								name="companyMission" 
 								onChange={this.handleChange} 
@@ -213,29 +228,49 @@ class Form extends React.Component {
 							/>
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Languages: </label>
-							<input type="text" name="languages" onChange={this.handleChange} />
+							<input 
+								className="textField"
+								type="text" 
+								name="languages" 
+								onChange={this.handleChange} />
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Skills: </label>
-							<input type="text" name="skills" onChange={this.handleChange} />
+							<input 
+								className="textField"
+								type="text" 
+								name="skills" 
+								onChange={this.handleChange} />
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Primary Focus: </label>
-							<input type="text" name="primaryFocus" onChange={this.handleChange} />
+							<input 
+								className="textField" 
+								type="text" 
+								name="primaryFocus" 
+								onChange={this.handleChange} />
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Working Experience: </label>
-							<input type="text" name="workingExperience" onChange={this.handleChange} />
+							<input 
+								className="textField"
+								type="text" 
+								name="workingExperience"
+								onChange={this.handleChange} />
 						</div>
 
-						<div>
+						<div className="section">
 							<label>Project Experience: </label>
-							<input type="text" name="projectExperience" onChange={this.handleChange} />
+							<input 
+								className="textField"
+								type="text" 
+								name="projectExperience" 
+								onChange={this.handleChange} />
 						</div>
 
 						{/* <div>
@@ -247,7 +282,7 @@ class Form extends React.Component {
 							<label>Website: </label>
 							<input type="text" name="websiteLink" onChange={this.handleChange} />
 						</div> */}
-						<input type="submit" value="Submit" />
+						<input className="submit" type="submit" value="Submit" />
 					</form>
 				</div>
       );

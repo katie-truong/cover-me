@@ -24,9 +24,13 @@ class App extends React.Component {
   render() {
     
     return (
-      <div>
-        <Form handleSubmitButtonClick={this.handleSubmitButtonClick}/>
-        <Message data={this.state.data}/>
+      <div className="body">
+        <h1 className="title">Cover Me</h1>
+        <h3 className="tagline">Cover letter made easy</h3>
+        <div className="main">
+          <Form handleSubmitButtonClick={this.handleSubmitButtonClick}/>
+          <Message data={this.state.data}/>
+        </div>
       </div>
     )
   }
