@@ -1,5 +1,7 @@
 import React from 'react';
 
+const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 class Form extends React.Component {
 
     constructor () {
@@ -36,12 +38,37 @@ class Form extends React.Component {
     }
     
     handleChange (event) {
-			this.props.onUpdate(event.target.value);
-			this.setState({ [event.target.name]: event.target.value });
+			// this.props.onUpdate(event.target.value);
+			this.setState({ 
+				submit: 'False',
+				[event.target.name]: event.target.value 
+			});
 		}
 		
 		handleSubmit(event) {
 			event.preventDefault();
+			this.setState({
+				submit: 'True'
+			}, () => {
+				let formData = {
+					yourName: this.state.yourName,
+					student: this.state.student,
+					school: this.state.school,
+					major: this.state.major,
+					contactName: this.state.contactName,
+					howWeMet: this.state.howWeMet,
+					companyName: this.state.companyName,
+					companyCategory: this.state.companyCategory,
+					languages: this.state.languages,
+					skills: this.state.skills,
+					workingExperience: this.state.workingExperience,
+					projectExperience: this.state.projectExperience,
+					phoneNumber: this.state.phoneNumber,
+					websiteLink: this.state.websiteLink,
+					submit: this.state.submit
+				};
+				this.props.handleSubmitButtonClick(formData);
+			})
 		}	
     
     render () {
@@ -66,7 +93,7 @@ class Form extends React.Component {
         			<label>Your Name: </label>
 							<input 
 								type="text" 
-								name="name" 
+								name="yourName" 
 								onChange={this.handleChange} 
 								value={this.state.name}/>
 						</div>
@@ -99,7 +126,7 @@ class Form extends React.Component {
 
 						<div>
 							<label>Contact Name: </label>
-							<input type="text" name="name" onChange={this.handleChange} />
+							<input type="text" name="contactName" onChange={this.handleChange} />
 						</div>
 
 						<div>
@@ -115,9 +142,9 @@ class Form extends React.Component {
 						<div>
 							<label>Company Type: </label>
 							<select value={this.state.value} onChange={this.handleChange}>
-								{this.state.companyCategory.map(option => (
-                	<option key={option.id} value={option.value}>{option.displayValue}</option>
-              	))}
+								{this.state.companyCategory.map((option, index) => (
+                	<option key={numArr[index]} value={option.value}>{option.displayValue}</option>
+								))}
 							</select>
 						</div>
 

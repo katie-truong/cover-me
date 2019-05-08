@@ -32,20 +32,28 @@ class App extends React.Component {
       websiteLink: '',
       submit: ''
     };
-    this.onUpdate = this.onUpdate.bind(this);
+    this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
   }
 
-  onUpdate = (name) => {
+
+  handleSubmitButtonClick = (formData) => {
     this.setState({
-      yourName: name
+      submit: formData.submit,
+      yourName: formData.yourName,
+      student: formData.student,
+      contactName: formData.contactName
+    }, () => {
+      console.log(this.state)
     })
   }
 
   render() {
     return (
       <div>
-        <Form onUpdate={this.onUpdate}/>
-        <div>My name is {this.state.yourName}</div>
+        <Form handleSubmitButtonClick={this.handleSubmitButtonClick}/>
+        <div>Hi {this.state.contactName}, 
+        
+        My name is {this.state.yourName}!</div>
       </div>
     )
   }
