@@ -1,7 +1,5 @@
 import React from 'react';
 
-const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 class Form extends React.Component {
 
     constructor () {
@@ -143,7 +141,7 @@ class Form extends React.Component {
 							<label>Company Type: </label>
 							<select value={this.state.value} onChange={this.handleChange}>
 								{this.state.companyCategory.map((option, index) => (
-                	<option key={numArr[index]} value={option.value}>{option.displayValue}</option>
+                	<option key={index} value={option.value}>{option.displayValue}</option>
 								))}
 							</select>
 						</div>

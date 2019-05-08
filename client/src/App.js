@@ -1,35 +1,13 @@
 import React from 'react';
 import Form from './Form.js';
+import Message from './Message.js';
 import './css/App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      yourName: '',
-      student: '',
-      contactName: '',
-      howWeMet: '',
-      companyName: '',
-      companyCategory: [
-          {value: '', displayValue: ''},
-          {value: 'bigN', displayValue: 'Big N'},
-          {value: 'finTech', displayValue: 'FinTech'},
-          {value: 'healthcare', displayValue: 'Health Care'},
-          {value: 'edu', displayValue: 'Education'},
-          {value: 'service', displayValue: 'Service'},
-          {value: 'ecommerce', displayValue: 'E-Commerce'},
-          {value: 'non-tech', displayValue: 'Non Tech'}
-      ],
-      companyMission: '',
-      school: '',
-      major: '',
-      languages: '',
-      skills: '',
-      workingExperience: '',
-      projectExperience: '',
-      phoneNumber: '',
-      websiteLink: '',
+      data: '',
       submit: ''
     };
     this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
@@ -39,21 +17,18 @@ class App extends React.Component {
   handleSubmitButtonClick = (formData) => {
     this.setState({
       submit: formData.submit,
-      yourName: formData.yourName,
-      student: formData.student,
-      contactName: formData.contactName
+      data: formData
     }, () => {
-      console.log(this.state)
+      console.log(this.state.data)
     })
   }
 
   render() {
+    
     return (
       <div>
         <Form handleSubmitButtonClick={this.handleSubmitButtonClick}/>
-        <div>Hi {this.state.contactName}, 
-        
-        My name is {this.state.yourName}!</div>
+        <Message data={this.state.data}/>
       </div>
     )
   }
