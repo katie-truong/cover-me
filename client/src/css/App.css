@@ -1,18 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans:400,700|PT+Serif:400,700|Roboto:400,700');
 
+#root {
+  background-color: #FBFBFB;
+}
+
 h1 {
   font-family: 'Kaushan Script', cursive, serif;
+  color: #4885ed;
 }
 
 
 .body {
   margin: 3vw;
   font-family: 'Open Sans', serif;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 
 .main {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 5vw;
+  /* grid-template-rows: auto auto; */
 } 
 

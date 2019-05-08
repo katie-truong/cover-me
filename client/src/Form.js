@@ -127,6 +127,7 @@ class Form extends React.Component {
 							className="textField"
 							type="text" 
 							name="title" 
+							defaultValue="Software Engineer"
 							onChange={this.handleChange} />
 					</div>
 				</div>

@@ -62,7 +62,7 @@ class Message extends React.Component {
         //     </div>
         // }
         return(
-            <div>
+            <div className="message">
                 Hi {toWhom}, <br></br>
                 <br></br>
                 I am excited to apply for the {this.props.data.position} position at {this.props.data.companyName}. 

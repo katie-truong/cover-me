@@ -28,7 +28,7 @@ class App extends React.Component {
 				school: 'University of Maryland',
 				major: 'Computer Science',
 				minor: 'Math',
-				title: '',
+				title: 'Software Engineer',
         languages: 'Java, Scala, Python',
 				skills: 'machine learning and predictive modeling',
 				primaryFocus: 'build the best recommendation system for the end users',
@@ -56,7 +56,6 @@ class App extends React.Component {
     return (
       <div className="body">
         <h1 className="title">Cover Me</h1>
-        <h3 className="tagline">Cover letter made easy</h3>
         <div className="main">
           <Form handleSubmitButtonClick={this.handleSubmitButtonClick}/>
           <Message data={this.state.data}/>

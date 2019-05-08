@@ -1,15 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans:400,700|PT+Serif:400,700|Roboto:400,700');
+
 .mainForm {
-    max-width: 36vw;
-    margin-right: 15vw;
+    width: 100%;
+    text-align: right;
+    margin-right: 5vw !important;
 }
 
 div.section {
-    width: 35vw;
+    padding-top: 2vh;
 }
 
 .textField {
-    height: 36px;
-    width: 25vw; 
+    height: 20px;
+    width: 30vw;
     font-family: 'Open Sans', serif;
-    font-size: 20px;
+    font-size: 15px;
   }
+
+.submit {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 1vh 1vw;
+    margin-top: 2vh;
+    background-color: #4885ed;
+    color: white;
+}
+
+label {
+    font-weight: 700;
+}
