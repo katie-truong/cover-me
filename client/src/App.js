@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
     this.state = {
       data: {
-				yourName: 'Kevin',
+				yourName: 'Ken',
 				student: 'true',
 				contactName: 'Nathan',
 				howWeMet: '',
@@ -25,7 +25,7 @@ class App extends React.Component {
 				],
 				position: 'Software Engineer New Grad',
 				companyMission: `to organize the world's information and make it universally accessible and useful`,
-				school: 'University of Maryland',
+				school: 'UC Berkeley',
 				major: 'Computer Science',
 				minor: 'Math',
 				title: 'Software Engineer',

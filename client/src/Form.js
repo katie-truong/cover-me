@@ -23,7 +23,7 @@ class Form extends React.Component {
 				],
 				position: 'Software Engineer New Grad',
 				companyMission: `to organize the world's information and make it universally accessible and useful`,
-				school: 'University of Maryland',
+				school: 'UC Berkeley',
 				major: 'Computer Science',
 				minor: 'Math',
 				title: 'Software Engineer',
@@ -95,7 +95,7 @@ class Form extends React.Component {
 						className="textField"
 						type="text" 
 						name="school" 
-						defaultValue="University of Maryland"
+						defaultValue="UC Berkeley"
 						onChange={this.handleChange} />
 				</div>
 
@@ -142,7 +142,7 @@ class Form extends React.Component {
 								type="text" 
 								name="yourName" 
 								onChange={this.handleChange}
-								defaultValue="Kevin" 
+								defaultValue="Ken" 
 								value={this.state.name}/>
 						</div>
 
