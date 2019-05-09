@@ -6,7 +6,7 @@ class Form extends React.Component {
     constructor () {
       super();
       this.state = {
-				yourName: 'Kevin',
+				yourName: 'Ken',
 				student: 'true',
 				contactName: 'Nathan',
 				howWeMet: '',
