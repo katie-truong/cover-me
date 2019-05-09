@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cover-me/static/css/main.b4617fb0.chunk.css",
-    "main.js": "/cover-me/static/js/main.c7c6a650.chunk.js",
-    "main.js.map": "/cover-me/static/js/main.c7c6a650.chunk.js.map",
+    "main.css": "/cover-me/static/css/main.9af0ca86.chunk.css",
+    "main.js": "/cover-me/static/js/main.d2be1d68.chunk.js",
+    "main.js.map": "/cover-me/static/js/main.d2be1d68.chunk.js.map",
     "runtime~main.js": "/cover-me/static/js/runtime~main.89e94c1f.js",
     "runtime~main.js.map": "/cover-me/static/js/runtime~main.89e94c1f.js.map",
     "static/js/2.53622f50.chunk.js": "/cover-me/static/js/2.53622f50.chunk.js",
     "static/js/2.53622f50.chunk.js.map": "/cover-me/static/js/2.53622f50.chunk.js.map",
     "index.html": "/cover-me/index.html",
-    "precache-manifest.3fd0960eeced04a5a4574eb9bf159a93.js": "/cover-me/precache-manifest.3fd0960eeced04a5a4574eb9bf159a93.js",
+    "precache-manifest.3daf775257887c99c7efdbc944c324ac.js": "/cover-me/precache-manifest.3daf775257887c99c7efdbc944c324ac.js",
     "service-worker.js": "/cover-me/service-worker.js",
-    "static/css/main.b4617fb0.chunk.css.map": "/cover-me/static/css/main.b4617fb0.chunk.css.map"
+    "static/css/main.9af0ca86.chunk.css.map": "/cover-me/static/css/main.9af0ca86.chunk.css.map"
   }
 }
