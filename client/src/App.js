@@ -60,6 +60,7 @@ class App extends React.Component {
           <Form handleSubmitButtonClick={this.handleSubmitButtonClick}/>
           <Message data={this.state.data}/>
         </div>
+        <div className="credit">Made by <a href="https://katietruong.com/" className="katie">Katie Truong</a></div>
       </div>
     )
   }
